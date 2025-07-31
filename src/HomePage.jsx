@@ -51,7 +51,7 @@ useEffect(() => {
           ))}
         </div>
       </div>
-      <div style={{ flex: 1, minWidth: 250, background: '#f9f9f9', border: '1px solid #eee', borderRadius: 8, padding: 16 }}>
+      <div style={{ flex: 1, minWidth: 250, background: '#000', color: '#fff', border: '1px solid #eee', borderRadius: 8, padding: 16 }}>
         <h2>Cart</h2>
         {cart.length === 0 ? <p>Your cart is empty.</p> : (
           <ul style={{ listStyle: 'none', padding: 0 }}>
