@@ -44,7 +44,7 @@ useEffect(() => {
               {item.image && (
                 <img src={item.image} alt={item.name} style={{ width: '100%', height: 120, objectFit: 'cover', borderRadius: 4, marginBottom: 8 }} />
               )}
-              <h3>{item.name}</h3>
+              <h3 style={{ color: '#000' }}>{item.name}</h3>
               <p>{item.description}</p>
               <button onClick={() => addToCart(item)} style={{ marginTop: 8 }}>Add to Cart</button>
             </div>
