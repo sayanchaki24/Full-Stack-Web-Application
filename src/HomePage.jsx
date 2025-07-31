@@ -7,9 +7,11 @@ function HomePage() {
     return saved ? JSON.parse(saved) : [];
   });
 
+const API_URL = import.meta.env.VITE_API_URL || '';
+
 useEffect(() => {
   const token = localStorage.getItem('token');
-  fetch('/api/items', {
+  fetch(`${API_URL}/api/items`, {
     headers: {
       Authorization: `Bearer ${token}`
     }
