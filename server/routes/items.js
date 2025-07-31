@@ -3,10 +3,10 @@ const Item = require('../models/Item');
 const auth = require('../middleware/auth');
 const router = express.Router();
 
-// Get all items for the logged-in user
+// Get all items (for demo, show all products to any logged-in user)
 router.get('/', auth, async (req, res) => {
   try {
-    const items = await Item.find({ user: req.user.id });
+    const items = await Item.find();
     res.json(items);
   } catch (err) {
     res.status(500).json({ message: err.message });

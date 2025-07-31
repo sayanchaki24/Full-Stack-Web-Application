@@ -2,11 +2,16 @@
 import { useState } from 'react';
 import Login from './Login';
 import Register from './Register';
+import HomePage from './HomePage';
 import './App.css';
 
 
 function App() {
-  const [isLoggedIn, setIsLoggedIn] = useState(!!localStorage.getItem('token'));
+  const [isLoggedIn, setIsLoggedIn] = useState(() => {
+    const token = localStorage.getItem('token');
+    // Optionally, add token validation here
+    return !!token;
+  });
   const [showRegister, setShowRegister] = useState(false);
 
   const handleLogin = () => setIsLoggedIn(true);
@@ -40,11 +45,12 @@ function App() {
   }
 
   return (
-    <div style={{ textAlign: 'center', marginTop: '2rem' }}>
-      <h1>Welcome!</h1>
-      <button onClick={handleLogout}>Logout</button>
-      {/* Add your protected app content here */}
-    </div>
+    <>
+      <div style={{ textAlign: 'right', padding: '1rem' }}>
+        <button onClick={handleLogout}>Logout</button>
+      </div>
+      <HomePage />
+    </>
   );
 }
 
